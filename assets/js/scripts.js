@@ -5,10 +5,13 @@
         initMobileMenu: function() {
             $('#mobile-menu').on('click', function(){
                 var sb = $('#sidebar');
+                var mm = $('#mobile-menu');
                 if(sb.hasClass('m-active')){
                     sb.removeClass('m-active');
+                    mm.removeClass('m-active');
                 } else {
                     sb.addClass('m-active');
+                    mm.addClass('m-active');
                 }
             });
             

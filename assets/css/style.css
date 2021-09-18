@@ -95,6 +95,9 @@ a:focus{
         height: 100vh;
         z-index: 1;
         margin-left: -250px;
+        min-width: unset;
+        max-width: unset;
+        width: 52%;
     }
     #sidebar.m-active {
         margin-left: 0px;
@@ -110,15 +113,22 @@ a:focus{
     display: block;
     padding: 1rem .5rem;
 }
+
 @media screen and (max-width: 991px) {
     .brand-link {
         padding: .5rem;
     }
 }
 
-.brand-image{
+.brand-image {
     width: 100%;
     padding: 0 20px;
+}
+
+@media screen and (max-width: 991px) {
+    .brand-image {
+        padding: 0 0 0 30px;
+    }
 }
 
 #sidebar ul.components{
@@ -218,23 +228,30 @@ ul.CTAs a {
     padding: 1rem;
     z-index: 1;
 }
+
+.hamburger-menu.m-active {
+    position: fixed;
+}
+
 .hamburger-menu span{
     background: var(--green);
-  border-radius:10px;
-  height: 4px;
-  margin-bottom: 4px;
-  transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    border-radius:10px;
+    height: 4px;
+    margin-bottom: 4px;
+    transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
+
 .hamburger-menu span:nth-of-type(1){
   width: 90%;
   
 }
+
 .hamburger-menu span:nth-of-type(2){
   width: 70%;
 }
+
 .hamburger-menu span:nth-of-type(3){
   width: 50%;
- 
 }
 
 .mobile-column .search-form {
@@ -245,6 +262,7 @@ ul.CTAs a {
 	padding: 0 1rem;
     margin-top: 3rem;
 }
+
 @media screen and (max-width: 991px) {
     .main-content {
         padding: 0;
