@@ -16,56 +16,68 @@
   <body>
    
    <div class="wrapper">
-   	<nav id="sidebar">
-   		<div class="sidebar-header">
-			<a href="#" class="brand-link">
-				<img src="assets/logo/logo.png" class="brand-image"/>
-			</a>
-   		</div>
-   		
-   		
-   		<ul class="list-unstyled components">		
-   			<li class="active">
-   				<a href="#">All Games</a>
-   			</li>
-   			<li>
-   				<a href="#">Top 10 BB Games</a>
-   			</li>
-   			<li>
-   				<a href="#">Top 20 BB Games</a>
-   			</li>
-			<li>
-				<a href="#">Wheel Slot</a>
-			</li>
-			<li>
-				<a href="#">Cascading Slot</a>
-			</li>
-			<li>
-				<a href="#">AV Slot</a>
-			</li>
-   		</ul>
-   	</nav>
+	<header id="sidebar">
+		<nav>
+			<div class="sidebar-header">
+			 <a href="#" class="brand-link">
+				 <img src="assets/logo/logo.png" class="brand-image"/>
+			 </a>
+			</div>
+			
+			<ul class="list-unstyled components">		
+				<li class="active">
+					<a href="#">All Games</a>
+				</li>
+				<li>
+					<a href="#">Top 10 BB Games</a>
+				</li>
+				<li>
+					<a href="#">Top 20 BB Games</a>
+				</li>
+			 <li>
+				 <a href="#">Wheel Slot</a>
+			 </li>
+			 <li>
+				 <a href="#">Cascading Slot</a>
+			 </li>
+			 <li>
+				 <a href="#">AV Slot</a>
+			 </li>
+			</ul>
+		</nav>
+	</header>
    	
    	<div class="content">
-   		<nav class="navbar navbar-expand-lg navbar-light">
-			<button type="button" id="sidebarCollapse" class="btn btn-info">
-				<i class="fa fa-align-justify"></i>
-			</button>
-		</nav>
-  	
-  	
+		<section class="mobile-header mobile-show">
+			<div class="d-flex justify-content-between align-items-center pt-2 pb-2">
+				<div class="mobile-column">
+					<div class="hamburger-menu" id="mobile-menu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<div class="mobile-column">
+					<img src="assets/logo/logo.png" class="img-fluid">
+				</div>
+				<div class="mobile-column mobile-search"></div>
+			</div>
+		</section>
 		<section class="main-content">
 			<div class="container-fluid">
 				 <!-- /.row -->
-				 <div class="row mb-2">
+				 <div class="row mb-2 align-items-center">
 					<div class="col-sm-6">
 					  <h1 class="m-0 my-1 title"><i class="fas fa-fire"></i> All Games</h1>
 					  <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</p>
 					</div><!-- /.col -->
-					<div class="col-sm-6">
-						<ol class="breadcrumb float-sm-right">
-							
-						</ol>
+					<div class="col-sm-6 d-flex justify-content-end desktop-search">
+						<form role="search" class="search-form">
+							<input type="text" name="search-input" class="search-input" placeholder="Search">
+							<button class="search-button">
+								<i class="search-icon"></i>
+							</button>
+						</form>
 					</div><!-- /.col -->
 				</div>
 				<!-- Info boxes -->
@@ -384,10 +396,39 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     
     <script>
+		var app = {
+			initMobileMenu: function() {
+				$('#mobile-menu').on('click', function(){
+					var sb = $('#sidebar');
+					if(sb.hasClass('m-active')){
+						sb.removeClass('m-active');
+					} else {
+						sb.addClass('m-active');
+					}
+				});
+			},
+			initMobileResize: function() {
+				$(window).on('resize load',function(){
+					var sf = $('.search-form');
+					if ($(this).width() < 991) {
+						sf.detach().prependTo('.mobile-search');
+					} else {
+						sf.detach().prependTo('.desktop-search');
+					}
+				});
+				// $('#sidebarCollapse').on('click',function(){
+				// 	$('#sidebar').toggleClass('active');
+				// });
+			},
+			init: function() {
+				this.initMobileResize();
+				this.initMobileMenu();
+			}
+		}
 	    $(document).ready(function(){
-			$('#sidebarCollapse').on('click',function(){
-				$('#sidebar').toggleClass('active');
-			});
+
+			app.init();
+			
 		});  
 	</script>    
   </body>

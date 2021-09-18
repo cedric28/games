@@ -1,11 +1,22 @@
+:root {
+    --dark-one: #1F252E;
+    --dark-two: #0D151E;
+    --dark-three: #4a4e62;
+    --gray: #727584;
+    --green: #59F933;
+}
+
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-body{font-family: 'Poppins', sans-serif;
-     background: #1F252E}
-p{font-family: 'Poppins', sans-serif;
-  font-size: 1.1em;
+body{
+    font-family: 'Poppins', sans-serif;
+     background: var(--dark-one);
+}
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
 	font-weight: 300;
 	line-height: 1.7em;
-	color: #999;
+	color: var(--gray);
 }
 a,
 a:hover,
@@ -16,11 +27,10 @@ a:focus{
 }
 .navbar{
 	padding: 15px 10px;
-	background: #1F252E;
+	background: var(--dark-one);
 	border: none;
 	border-radius: 0;
 	margin-bottom: 40px;
-	/* box-shadow: 1px 1px 3px rgba(0,0,0,0.1);*/
 } 
 
 .navbar-btn{
@@ -32,49 +42,79 @@ a:focus{
 .line{
 	width: 100%;
 	height: 1px;
-	border-bottom: 1px dashed #ddd;
+	border-bottom: 1px dashed var(--gray);
 }
 
 .wrapper {
     display: flex;
     width: 100%;
+    height: 100%;
     align-items: stretch;
 }
+
+.wrapper:after {
+    content: '';
+    background: url('../images/layout/Mesu-Kyoushi-4---Outani-Kaho-Render-1.png') top center no-repeat;
+    height: 43%;
+    width: 25%;
+    position: fixed;
+    bottom: 0;
+    left: -7%;
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper:after {
+        height: 30%;
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .wrapper:after {
+        all: unset;
+    }
+}
+
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #0D151E;
-    color: #9E9E9E;
+    background: var(--dark-two);
+    color: var(--gray);
     transition: all 0.3s;
 }
-#sidebar.active{
-	margin-left: -250px;
+
+@media screen and (max-width: 991px) {
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: auto;
+        height: 100vh;
+        z-index: 1;
+        margin-left: -250px;
+    }
+    #sidebar.m-active {
+        margin-left: 0px;
+    }
 }
 
 #sidebar .sidebar-header{
 	padding: 20px;
-	background: #0D151E;
+	background: var(--dark-two);
 }
 
 .brand-link{
-	overflow: hidden;
-    top: 0;
-    z-index: 1035;
-	display: block;
-    font-size: 1.25rem;
-    line-height: 1.5;
-    padding: .8125rem .5rem;
-	white-space: nowrap;
+    display: block;
+    padding: 1rem .5rem;
+}
+@media screen and (max-width: 991px) {
+    .brand-link {
+        padding: .5rem;
+    }
 }
 
 .brand-image{
-	float: left;
-    line-height: .8;
-    margin-left: .8rem;
-    margin-right: .5rem;
-    margin-top: -3px;
-    max-height: 33px;
-    width: auto;
+    width: 100%;
+    padding: 0 20px;
 }
 
 #sidebar ul.components{
@@ -93,12 +133,12 @@ a:focus{
 	display: block;
 }
 #sidebar ul li a:hover {
-    color: #59F933;
+    color: var(--green);
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
-    color: #59F933;
+    color: var(--green);
 }
 a[data-toggle="collapse"] {
     position: relative;
@@ -114,7 +154,6 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
 }
 
 ul.CTAs {
@@ -142,18 +181,126 @@ ul.CTAs a {
 }
 
 .description{
-	color: #727584;
+	color: var(--gray);
 	font-size: 12px;
 }
+.mobile-header {
+    padding: 1rem 15px;
+}
 
-.main-content{
+.mobile-column {
+    width: 50%;
+    padding: 0 10px;
+}
+
+.mobile-column:nth-of-type(1) {
+    width: 10%;
+    padding: 0;
+}
+.mobile-column:nth-of-type(2) {
+    width: 40%;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction:column;
+    cursor:pointer;
+    position: absolute;
+    top: 2%;
+    left: 0;
+    height: 60px;
+    width: 60px;
+    background: transparent;
+    padding: 1rem;
+    z-index: 1;
+}
+.hamburger-menu span{
+    background: var(--green);
+  border-radius:10px;
+  height: 4px;
+  margin-bottom: 4px;
+  transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+.hamburger-menu span:nth-of-type(1){
+  width: 90%;
+  
+}
+.hamburger-menu span:nth-of-type(2){
+  width: 70%;
+}
+.hamburger-menu span:nth-of-type(3){
+  width: 50%;
+ 
+}
+
+.mobile-column .search-form {
+    width: 100%;
+}
+
+.main-content {
 	padding: 0 1rem;
+    margin-top: 3rem;
+}
+@media screen and (max-width: 991px) {
+    .main-content {
+        padding: 0;
+        margin-top: unset;
+    }
+}
+
+.search-form {
+    background: var(--dark-one);
+    border-bottom: 1px solid var(--dark-three);
+    width: 200px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search-input {
+    all: unset;
+    color: var(--gray);
+    font-size: 12px;
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+}
+
+.search-button:focus-visible,
+.search-input:focus-visible {
+    outline: unset;
+}
+
+.search-input::placeholder {
+    font-size: 12px;
+    color: var(--dark-three);
+}
+
+.search-button {
+    all: unset;
+    cursor: pointer;
+}
+
+.search-button .search-icon {
+    all: unset;
+    background: url('../images/layout/search.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px;
 }
 
 .games{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media screen and (max-width: 991px) {
+    .games{
+        justify-content: space-between;
+    }
 }
 
 .game-card{
@@ -164,16 +311,23 @@ ul.CTAs a {
     max-width: 200px;
 }
 
-@media screen and (max-width: 992px) {
-		.game-card{
-			max-width: 160px;
-		}
+@media screen and (max-width: 991px) {
+    .game-card{
+        max-width: 165px;
+    }
+}
+
+@media screen and (max-width: 360px) { 
+    .game-card {
+        max-width: unset;
+        width: 100%;
+    }
 }
 
 .game-image-container{
     display: flex;
     width: 100%;
-    height: 215px; 
+    height: 120px; 
 }
 
 .game-image {
@@ -198,10 +352,11 @@ ul.CTAs a {
 .game-name{
 	color: #EBEBEB;
 	font-size: 15px;
+    margin: auto;
 }
 
 .game-desc{
-	color: #727584;
+	color: var(--gray);
 	font-size: 12px;
 }
 
@@ -211,36 +366,21 @@ ul.CTAs a {
 }
 
 .fas{
-    color: #59F933;
+    color: var(--green);
 }
 
-@media screen and (max-width:768px){
-	#sidebar{margin-left: -250px;}
-	#sidebar.active{
-		margin-left: 0px;
-	}
+.desktop-show {
+    display: block;
+}
+.mobile-show {
+    display: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media screen and (max-width: 991px) {
+	.desktop-show {
+        display: none;
+    }
+    .mobile-show {
+        display: block;
+    }
+}
