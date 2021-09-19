@@ -111,7 +111,7 @@ a:focus{
 
     #sidebar{
         margin-left: -250px;
-        margin-top: -126px;
+        margin-top: -125px;
     }
     #sidebar.active{
 		margin-left: 0px;
@@ -121,7 +121,7 @@ a:focus{
 @media screen and (max-width: 640px) {
     #sidebar{
         margin-left: -250px;
-        margin-top: -80px;
+        margin-top: -78px;
     }
 }
 
@@ -280,7 +280,7 @@ ul.CTAs a {
 }
 
 .mobile-logo {
-    padding: 6px 0;
+    padding: 5px 0;
 }
 
 .main-content {
