@@ -131,7 +131,7 @@ a:focus{
 }
 
 @media screen and (max-width: 991px) {
-    .brand-link {
+    #sidebar .sidebar-header {
         padding: 20px 5px 20px 20px;
     }
 }
