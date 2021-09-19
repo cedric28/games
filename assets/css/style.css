@@ -344,14 +344,25 @@ ul.CTAs a {
 }
 
 .games{
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
+    padding-top: 10px;
+    /* display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; */
+    
+}
+.games::after {
+    content: "";
+    flex: auto;
 }
 
 @media screen and (max-width: 991px) {
     .games{
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
         justify-content: space-between;
     }
 }
