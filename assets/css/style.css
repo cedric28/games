@@ -111,7 +111,7 @@ a:focus{
 
     #sidebar{
         margin-left: -250px;
-        margin-top: -140px;
+        margin-top: -126px;
     }
     #sidebar.active{
 		margin-left: 0px;
@@ -121,7 +121,7 @@ a:focus{
 @media screen and (max-width: 640px) {
     #sidebar{
         margin-left: -250px;
-        margin-top: -91px;
+        margin-top: -80px;
     }
 }
 
@@ -148,7 +148,7 @@ a:focus{
 
 @media screen and (max-width: 991px) {
     .brand-image {
-        padding: 0 0 0 30px;
+        padding: 1px 0 0 30px;
     }
 }
 
@@ -220,7 +220,7 @@ ul.CTAs a {
 	font-size: 12px;
 }
 .mobile-header {
-    padding: 1rem 15px;
+    padding: 1rem 15px 0 15px;
 }
 
 .mobile-column {
@@ -280,7 +280,7 @@ ul.CTAs a {
 }
 
 .mobile-logo {
-    padding: 5px 0;
+    padding: 6px 0;
 }
 
 .main-content {
