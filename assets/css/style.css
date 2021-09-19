@@ -319,18 +319,6 @@ ul.CTAs a {
     }
 }
 
-@media screen and (max-width: 375px) {
-    .hamburger-menu {
-        top: 2%;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .hamburger-menu {
-        top: 3%;
-    }
-}
-
 @media screen and (max-width: 280px) {
     .hamburger-menu {
         top: 2%;
