@@ -345,9 +345,16 @@ ul.CTAs a {
 
 .games{
     display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    /* display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
     gap: 10px;
+}
+.games::after {
+    content: "";
+    flex: auto;
 }
 
 @media screen and (max-width: 991px) {
