@@ -64,7 +64,7 @@ a:focus{
     background-repeat: no-repeat;
     background-position: top center;
     background-size: 85%;
-    height: 60%;
+    height: 58%;
     width: 25%;
     position: fixed;
     bottom: 0;
@@ -355,7 +355,7 @@ ul.CTAs a {
     justify-content: flex-start;
     align-items : flex-start;
     border : none;
-    max-width: 190px;
+    max-width: 200px;
 }
 
 @media screen and (max-width: 991px) {
