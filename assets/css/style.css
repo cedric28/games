@@ -52,6 +52,12 @@ a:focus{
     align-items: stretch;
 }
 
+@media screen and (max-width: 991px) {
+    .wrapper {
+        height: unset;
+    }
+}
+
 .wrapper:after {
     content: '';
     background: url('../images/layout/Mesu-Kyoushi-4---Outani-Kaho-Render-1.png');
@@ -88,7 +94,7 @@ a:focus{
 }
 
 @media screen and (max-width: 991px) {
-    #sidebar {
+    /* #sidebar {
         position: fixed;
         top: 0;
         left: auto;
@@ -98,14 +104,29 @@ a:focus{
         min-width: unset;
         max-width: unset;
         width: 52%;
-    }
-    #sidebar.m-active {
+    } */
+    /* #sidebar.m-active {
         margin-left: 0px;
+    } */
+
+    #sidebar{
+        margin-left: -250px;
+        margin-top: -140px;
+    }
+    #sidebar.active{
+		margin-left: 0px;
+        min-width: 50%;
+	}
+}
+@media screen and (max-width: 640px) {
+    #sidebar{
+        margin-left: -250px;
+        margin-top: -91px;
     }
 }
 
 #sidebar .sidebar-header{
-	padding: 20px;
+	padding: 20px 5px 20px 20px;
 	background: var(--dark-two);
 }
 
@@ -256,6 +277,10 @@ ul.CTAs a {
 
 .mobile-column .search-form {
     width: 100%;
+}
+
+.mobile-logo {
+    padding: 5px 0;
 }
 
 .main-content {
