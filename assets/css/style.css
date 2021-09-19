@@ -143,6 +143,18 @@ a:focus{
     }
 }
 
+@media screen and (max-width: 320px) {
+    #sidebar .sidebar-header {
+        padding: 25px 5px 20px 20px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    #sidebar .sidebar-header {
+        padding: 30px 5px 20px 20px;
+    }
+}
+
 .brand-link{
     display: block;
     padding: 1rem .5rem;
@@ -188,6 +200,18 @@ a:focus{
     .brand-image {
         width: 100%;
         padding: 1px 0 0 30px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .brand-image {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .brand-image {
+        width: 100%;
     }
 }
 
@@ -289,6 +313,30 @@ ul.CTAs a {
     z-index: 1;
 }
 
+@media screen and (max-width: 500px) {
+    .hamburger-menu {
+        top: 3%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .hamburger-menu {
+        top: 2%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .hamburger-menu {
+        top: 3%;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .hamburger-menu {
+        top: 2%;
+    }
+}
+
 .hamburger-menu.m-active {
     position: fixed;
 }
@@ -327,11 +375,25 @@ ul.CTAs a {
         width: 60%;
     }
 }
+
 @media screen and (max-width: 640px) {
     .mobile-logo {
         width: 100%;
     }
 }
+
+@media screen and (max-width: 540px) {
+    .mobile-logo {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .mobile-logo {
+        width: 100%;
+    }
+}
+
 
 .main-content {
 	padding: 0 1rem;
