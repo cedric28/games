@@ -355,7 +355,7 @@ ul.CTAs a {
     justify-content: flex-start;
     align-items : flex-start;
     border : none;
-    max-width: 200px;
+    max-width: 190px;
 }
 
 @media screen and (max-width: 991px) {
