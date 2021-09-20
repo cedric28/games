@@ -50,6 +50,7 @@ a:focus{
     width: 100%;
     height: 100%;
     align-items: stretch;
+    position: fixed;
 }
 
 @media screen and (max-width: 991px) {
@@ -153,6 +154,10 @@ a:focus{
     #sidebar .sidebar-header {
         padding: 30px 5px 20px 20px;
     }
+}
+
+.content {
+    overflow: auto;
 }
 
 .brand-link{
